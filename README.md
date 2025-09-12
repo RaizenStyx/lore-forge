@@ -1,7 +1,5 @@
 # 🌌 Lore Forge: Unleash Limitless Narratives for Your Games
 
-![Lore Forge Banner/Screenshot Placeholder](https://via.placeholder.com/1200x400?text=Lore+Forge+App+Screenshot)
-
 **Status:** Under Active Development | Public Demo Available
 
 ---
@@ -92,7 +90,7 @@ To get a local copy of Lore Forge up and running for development, follow these s
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-github-username/lore-forge.git](https://github.com/your-github-username/lore-forge.git)
+    git clone https://github.com/RaizenStyx/lore-forge.git
     cd lore-forge
     ```
     (Replace `your-github-username` and `lore-forge` with your actual GitHub username and repository name)
@@ -110,34 +108,13 @@ Lore Forge requires several environment variables for authentication and API acc
 
 ```dotenv
 # .env.local - DO NOT COMMIT THIS FILE TO GIT!
-
-# --- NextAuth.js Configuration (for GitHub OAuth) ---
-# Obtain these from your GitHub OAuth App settings (e.g., GitHub Developer Settings -> OAuth Apps)
-GITHUB_ID=YOUR_GITHUB_CLIENT_ID
-GITHUB_SECRET=YOUR_GITHUB_CLIENT_SECRET
-NEXTAUTH_SECRET=YOUR_RANDOM_STRING_FOR_NEXTAUTH_SECRET # Use `openssl rand -base64 32` to generate a strong key
-
-# --- Google Cloud Vertex AI Configuration (for AI API access) ---
-# Your Google Cloud Project ID (e.g., inbound-trilogy-460817-t5)
-GCP_PROJECT_ID=YOUR_GCP_PROJECT_ID
-
-# Base64 encoded JSON string of your Google Cloud Service Account Key
-# 1. Download the JSON key from GCP Console > IAM & Admin > Service Accounts > Your SA > Keys > Add Key > Create new key > JSON
-# 2. Encode its ENTIRE content (including newlines) to Base64.
-#    - Linux/macOS: `cat /path/to/your/service-account-key.json | base64`
-#    - Online tools can also be used, but be cautious with sensitive data.
-GCP_SERVICE_ACCOUNT_KEY_BASE64=YOUR_BASE64_ENCODED_SERVICE_ACCOUNT_KEY_JSON
-
-# --- App Access Control (For Developer-Only Access to Main Forge) ---
-# The GitHub email address authorized to view the main Forge page.
-# This MUST be prefixed with NEXT_PUBLIC_ for client-side access in Navbar.tsx.
-# NEXT_PUBLIC_AUTHORIZED_FORGE_EMAIL=your_personal_github_email@example.com
+# Obtain from OpenAI developers platform
+OPENAI_API_KEY=YOUR_OPENAI_API_KEY
 ```
 
 ### Important Notes:
 
 * Security: Never commit your .env.local file to version control. Add it to your .gitignore. For production deployments (e.g., Vercel), set these variables directly in your hosting provider's environment settings.
-* GitHub OAuth App: Ensure your GitHub OAuth App's callback URL is correctly configured (e.g., http://localhost:3000/api/auth/callback/github for local dev, and your Vercel URL for production).
 
 ---
 
@@ -174,9 +151,9 @@ The Test Forge is designed to give you a full demonstration of Lore Forge's capa
 
 ### The Main Forge
 
-* **Access"** Only users who log in with the GitHub account email specified in NEXT_PUBLIC_AUTHORIZED_FORGE_EMAIL will be able to access this page.
-* **Unauthorized Access:** If an unauthorized user attempts to access the main Forge, they will be redirected to the "Coming Soon" page.
-* **Functionality:** This page allows you to interact with the live Google Cloud Vertex AI backend to generate new, unique lore based on your custom prompts.
+* **Access"** Only users who are smart enough or pay for permission can use the full form.
+* **Unauthorized Access:** If an unauthorized user attempts to access the main Forge, they will be redirected to the "Coming Soon" page. (TODO)
+* **Functionality:** This page allows you to interact with the live OpenAI's ChatGPT backend to generate new, unique lore based on your custom prompts.
 
 ---
 
