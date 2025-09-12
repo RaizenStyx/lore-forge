@@ -5,13 +5,6 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,8 +12,57 @@
   }
 }
 
+html {
+  background-color: #F8FAFC; 
+  color: #171717; 
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar styles - using standard Tailwind colors */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1C1C35; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00E0FF; 
+  border-radius: 10px;
+  border: 1px solid #3A3A60; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A020F0; 
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px; /* Wider scrollbar for more presence */
+  height: 10px; /* For horizontal scrollbars */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #10102b; /* Slightly lighter than bg-gray-950, very dark blue */
+  border-radius: 5px; /* Slightly rounded corners */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(34, 211, 238, 0.7); /* cyan-400 with 70% opacity */
+  border-radius: 5px; /* Matches track radius */
+  border: 1px solid rgba(55, 65, 81, 0.5); /* Semi-transparent gray-700 border */
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.4); /* Subtle glow effect */
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transitions */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(162, 28, 255, 0.8); /* fuchsia-500 with 80% opacity */
+  box-shadow: 0 0 12px rgba(162, 28, 255, 0.6); /* Stronger glow on hover */
 }
