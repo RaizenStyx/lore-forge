@@ -66,3 +66,51 @@ body {
   background-color: rgba(162, 28, 255, 0.8); /* fuchsia-500 with 80% opacity */
   box-shadow: 0 0 12px rgba(162, 28, 255, 0.6); /* Stronger glow on hover */
 }
+
+/* Custom CSS for Blog content*/
+
+.blog-title {
+  font-size: 2.25rem; /* 36px */
+  font-weight: 700;
+  color: #00E0FF; /* Warm Gold */
+  margin-bottom: 0.5rem;
+  font-family: serif;
+}
+
+.blog-heading {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700;
+  color: white;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-family: serif;
+}
+
+ .post-meta {
+  font-style: italic;
+  color: #a0a0a0;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  color: #d1d5db; /* Light gray */
+}
+
+strong {
+  color: white;
+  font-weight: 600;
+}
+
+p, ul, ol, li {
+  color: #d1d5db;
+}
+
+.blog-content p, .blog-content li {
+  font-size: 1rem;
+}

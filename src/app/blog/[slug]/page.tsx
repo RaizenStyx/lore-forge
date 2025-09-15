@@ -20,7 +20,9 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
         </article>
-        <NewsletterForm />
+      </div>
+      <div className='mt-10 flex justify-center w-full'>
+       <NewsletterForm />
       </div>
     </Layout>
   );

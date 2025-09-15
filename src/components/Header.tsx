@@ -1,8 +1,7 @@
 "use client"
 import { useState } from 'react'
 import Link from 'next/link'
-// import { UserCircleIcon, UserIcon, XMarkIcon, HomeIcon, 
-//   Bars3CenterLeftIcon, ClockIcon, SparklesIcon } from '@heroicons/react/24/solid'
+
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
@@ -35,9 +34,9 @@ export default function Header() {
               </Link>
             </div>
           </div>
-          <Link href="/blog">
+          <Link href="/news">
             <span className="hover:text-gray-300 transition-colors cursor-pointer">
-              Blog
+              News
             </span>
           </Link>
           <Link href="/project-log">
@@ -45,9 +44,9 @@ export default function Header() {
               Project Log
             </span>
           </Link>
-          <Link href="/coming-soon">
+          <Link href="/blog">
             <span className="hover:text-gray-300 transition-colors cursor-pointer">
-              Coming Soon
+              Blog
             </span>
           </Link>
         </div>
@@ -92,9 +91,9 @@ export default function Header() {
               Demo Forge
             </span>
           </Link>
-          <Link href="/blog">
+          <Link href="/news">
             <span className="text-2xl font-semibold hover:text-gray-300 transition-colors cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
-              Blog
+              News
             </span>
           </Link>
           <Link href="/project-log">
@@ -102,9 +101,9 @@ export default function Header() {
               Project Log
             </span>
           </Link>
-          <Link href="/coming-soon">
+          <Link href="/blog">
             <span className="text-2xl font-semibold hover:text-gray-300 transition-colors cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
-              Coming Soon
+              Blog
             </span>
           </Link>
 
